@@ -9,22 +9,6 @@ PPO aims to improve the policy of an agent by optimizing a surrogate objective f
 
 The core idea behind PPO is to take small, controlled steps to update the policy. This is achieved by clipping the probability ratio of the old and new policies, which bounds the amount of change that can be applied to the policy at each update.
 
-### Key Equations
-
-1. **Probability Ratio**:
-   \[
-      r_t(\theta) = \frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}
-   \]
-   Where \( \pi_\theta \) is the policy parameterized by \( \theta \), \( a_t \) is the action taken at time \( t \), and \( s_t \) is the state at time \( t \).
-
-3. **Clipped Surrogate Objective**:
-   \[
-   L^{CLIP}(\theta) = \mathbb{E}_t [ \min(r_t(\theta) \hat{A}_t, \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon) \hat{A}_t) ]
-   \]
-   Where \( \hat{A}_t \) is the estimated advantage at time \( t \), and \( \epsilon \) is a small value (e.g., 0.1 or 0.2).
-
-The objective is to maximize \( L^{CLIP}(\theta) \), which helps in improving the policy while maintaining a degree of safety against harmful large updates.
-
 ## Practical Example
 
 ### Environment
