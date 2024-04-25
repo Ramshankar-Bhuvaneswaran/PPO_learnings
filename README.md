@@ -15,10 +15,11 @@ The core idea behind PPO is to take small, controlled steps to update the policy
 Consider a simple game where an agent can move either left or right to reach a goal. The state is the position of the agent, and the actions are [left, right]. The reward is +1 for reaching the goal, and -1 for moving away from it.
 
 ### Algorithm Steps
-1. **Initialize**: Start with a random policy \( \pi_{\theta_{old}} \).
+
+1. **Initialize**: Start with a random policy (denoted by the Greek letter theta, subscript old:  ${\pi_{\theta_{old}}}$).
 2. **Collect Data**: Run the policy to collect data on states, actions, and rewards.
-3. **Estimate Advantage**: Compute the advantage \( \hat{A}_t \), which measures how much better or worse an action is compared to the average.
-4. **Optimize**: Update the policy by optimizing the clipped surrogate objective \( L^{CLIP}(\theta) \).
+3. **Estimate Advantage**: Compute the advantage (denoted by the capital A with a hat, subscript t: ${\hat{A}_t}$), which measures how much better or worse an action is compared to the average.
+4. **Optimize**: Update the policy by optimizing the clipped surrogate objective (denoted by a capital L with a superscript CLIP and theta in parentheses: ${L^{CLIP}(\theta)})$.
 5. **Repeat**: Use the updated policy to collect new data, and repeat the process.
 
 
