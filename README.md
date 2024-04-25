@@ -29,28 +29,6 @@ The Actor-Critic method is a type of reinforcement learning algorithm that combi
 - **The Actor**: Determines the best action to take given a state.
 - **The Critic**: Evaluates the action taken by the actor by computing the value function, which estimates how good a particular state or action is in terms of expected future rewards.
 
-## Theoretical Background
-In reinforcement learning, the goal is to learn a policy that maximizes the expected sum of rewards over time. The Actor-Critic method achieves this by having the critic learn the value function and then use this to guide the actor's policy improvement.
-
-The Actor-Critic architecture typically consists of two neural networks or a combined network with two outputs:
-1. **Actor**: Outputs a probability distribution over actions (policy).
-2. **Critic**: Outputs a scalar value prediction (value function).
-
-### Key Equations
-- **Policy (Actor)**:
-  \[
-  \pi(a|s, \theta^\pi) \quad \text{(parameterized by }\theta^\pi\text{)}
-  \]
-- **Value Function (Critic)**:
-  \[
-  V(s, \theta^v) \quad \text{(parameterized by }\theta^v\text{)}
-  \]
-
-The updates for these components are guided by the temporal difference error (\(\delta\)), computed by the critic:
-\[
-\delta = R + \gamma V(s', \theta^v) - V(s, \theta^v)
-\]
-Where \( R \) is the reward received after taking action \( a \) in state \( s \), and \( \gamma \) is the discount factor.
 
 ## Practical Example: Balancing a Cartpole
 
