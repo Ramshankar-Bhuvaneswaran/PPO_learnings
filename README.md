@@ -58,16 +58,16 @@ A3C utilizes multiple agents (actors) that independently interact with different
 3. **Local Networks**: Each actor has a local copy of the model, which is used to gather gradients based on its experiences.
 
 ### Key Equations
-- **Actor's Policy Gradient**:
-  \\[
-  \\nabla_{\\theta^\\pi} \\log \\pi(a_t|s_t, \\theta^\\pi) A(s_t, a_t)
-  \\]
-- **Critic's Value Update**:
-  \\[
-  \\delta_t = r_t + \\gamma V(s_{t+1}, \\theta^v) - V(s_t, \\theta^v)
-  \\]
 
-Here, \\( A(s_t, a_t) \\) is the advantage at time \\( t \\), calculated as the difference between the return from a state-action pair and the value of the state as estimated by the critic.
+**Actor's Policy Gradient:**
+
+$$ \nabla_{\theta^{\pi}} \log \pi(a_t | s_t, \theta^{\pi}) A(s_t, a_t) $$
+
+**Critic's Value Update:**
+
+$$ \delta_t = r_t + \gamma V(s_{t+1}, \theta^v) - V(s_t, \theta^v) $$
+
+Here, $A(s_t, a_t)$ is the advantage at time $t$, calculated as the difference between the return from a state-action pair and the value of the state as estimated by the critic.
 
 ## Practical Example: Multi-Agent Maze Navigation
 
